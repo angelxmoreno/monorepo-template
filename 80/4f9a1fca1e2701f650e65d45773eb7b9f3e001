@@ -1,0 +1,23 @@
+README.md
+  s_e01169cccf9f6c::t_c1ef0ff34c718d 1-61
+.github/workflows/gito-code-review.yml
+  s_e01169cccf9f6c::t_862beef7cc5512 1-47
+.gito/config.toml
+  s_e01169cccf9f6c::t_17e63ac468cf87 1-23
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "804f9a1fca1e2701f650e65d45773eb7b9f3e001",
+  "prompts": {},
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
