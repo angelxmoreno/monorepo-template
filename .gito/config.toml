@@ -1,0 +1,23 @@
+mention_triggers = ["gito", "/review"]
+collapse_previous_code_review_comments = true
+
+exclude_files = [
+	"bun.lock",
+	"package-lock.json",
+	"yarn.lock",
+	"pnpm-lock.yaml",
+	"*.gen.ts",
+	"*.generated.ts",
+	"dist/**",
+	"build/**",
+	".next/**",
+	".output/**",
+]
+
+[prompt_vars]
+requirements = """
+Enforce TypeScript strict typing — never use "any" type.
+Prefer explicit types over type assertions.
+Check for proper error handling at system boundaries.
+Flag any security vulnerabilities (injection, XSS, exposed secrets).
+"""
