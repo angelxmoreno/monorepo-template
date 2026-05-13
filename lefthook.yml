@@ -1,12 +1,18 @@
-commit-msg:
-  commands:
-    lint-commit:
-      run: bunx commitlint --edit {1}
-
 pre-commit:
   parallel: true
   commands:
-    format:
-      glob: "*.{ts,tsx,js,jsx,json,md}"
-      run: bunx biome check --fix --no-errors-on-unmatched {staged_files}
-      stage_fixed: true
+    lint:
+      run: bun run lint:fix
+      skip:
+        - merge
+        - rebase
+    types:
+      run: bun run check:types
+      skip:
+        - merge
+        - rebase
+
+commit-msg:
+  commands:
+    commitlint:
+      run: bunx commitlint --edit {1}
