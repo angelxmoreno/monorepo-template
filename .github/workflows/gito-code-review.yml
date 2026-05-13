@@ -30,9 +30,9 @@ jobs:
       - name: Run AI code review
         env:
           LLM_API_TYPE: openai
-          LLM_API_BASE: ${{ vars.LLM_API_BASE || 'https://api.ollama.com/v1/' }}
+          LLM_API_BASE: ${{ vars.LLM_API_BASE || 'https://ollama.com/v1/' }}
           LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          MODEL: ${{ vars.MODEL || 'llama3' }}
+          MODEL: ${{ vars.MODEL || 'deepseek-v4-pro:cloud' }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR_NUMBER_FROM_WORKFLOW_DISPATCH: ${{ github.event.inputs.pr_number }}
         run: |

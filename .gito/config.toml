@@ -14,6 +14,12 @@ exclude_files = [
 	".output/**",
 ]
 
+[pipeline_steps.jira]
+enabled = false
+
+[pipeline_steps.linear]
+enabled = false
+
 [prompt_vars]
 requirements = """
 Enforce TypeScript strict typing — never use "any" type.
