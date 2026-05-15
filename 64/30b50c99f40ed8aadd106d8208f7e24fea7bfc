@@ -1,0 +1,40 @@
+docker-compose.yml
+  s_e01169cccf9f6c::t_842a32dd763e47 14,28,46,55-57
+  s_e01169cccf9f6c::t_9ec6a2558c383f 1-6,8-13,15-25,27,29-34,38-39,42,48,50-54
+  s_e01169cccf9f6c::t_6c8a0a0282c817 35-37,43-45,47,49
+  s_e01169cccf9f6c::t_b887d52396a3c3 40-41
+  s_e01169cccf9f6c::t_566f614f3b1900 26
+  s_e01169cccf9f6c::t_e3d26fed10260d 7
+packages/database/src/dataSource.ts
+  h_d2d80973a08152 10-12
+.gitignore
+  s_e01169cccf9f6c::t_555d9132aa337a 144-147
+docker-compose.hatchet.yml
+  s_e01169cccf9f6c::t_cf8bf8b6a6c704 28,39,56,68,76-79
+  s_e01169cccf9f6c::t_45a51b8f56612d 1-27,29-38,40-55,57-67,69-75
+README.md
+  s_e01169cccf9f6c::t_1a6b2361cb75e8 16,38-72,92
+packages/database/src/utils/parseDsnString.ts
+  h_d2d80973a08152 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "6430b50c99f40ed8aadd106d8208f7e24fea7bfc",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
