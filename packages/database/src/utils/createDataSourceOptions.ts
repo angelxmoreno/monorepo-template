@@ -11,7 +11,7 @@ export function createDataSourceOptions(
 
 	return {
 		entities: [...entities],
-		// migrations: [`${import.meta.dir}/../migrations/*.{ts,js}`],
+		migrations: [`${import.meta.dir}/../migrations/*.{ts,js}`],
 		migrationsTableName: "typeorm_migrations",
 		namingStrategy: new InflectionNamingStrategy(),
 		...driverOptions,
