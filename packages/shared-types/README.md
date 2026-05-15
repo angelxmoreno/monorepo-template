@@ -11,9 +11,7 @@ Zod schemas and shared types for the musicalito monorepo.
 ## Usage
 
 ```ts
-import { UserSchema } from "@repo/shared-types";
-
-type User = z.infer<typeof UserSchema>;
+import { UserSchema, type User } from "@repo/shared-types";
 ```
 
 ## Conventions
