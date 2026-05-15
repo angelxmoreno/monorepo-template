@@ -1,0 +1,52 @@
+packages/database/src/dataSource.ts
+  s_e01169cccf9f6c::t_ff2be81931ebaa 12
+packages/database/src/utils/createDataSourceOptions.ts
+  ai_agent 3
+  s_e01169cccf9f6c::t_6112010314b0b4 1-2,4-7,13-14,21-27
+  h_d2d80973a08152 8,10-11,17-18
+packages/database/tsconfig.json
+  s_e01169cccf9f6c::t_7d958566ce6b24 2-8
+packages/database/src/naming-strategy/InflectionNamingStrategy.ts
+  ai_agent 1-185
+packages/database/scripts/create-migration.sh
+  ai_agent 1-6
+packages/database/scripts/generate-migration.sh
+  ai_agent 1-6
+packages/database/src/naming-strategy/utils.ts
+  s_e01169cccf9f6c::t_68011644a37a25 1-55,58-64
+  s_e01169cccf9f6c::t_3417f008c4625b 56-57
+packages/database/src/utils/parseDsnString.ts
+  s_e01169cccf9f6c::t_64023d0a4ed012 3,33-49
+  s_e01169cccf9f6c::t_3a5c8980c160e3 25-31
+packages/database/src/index.ts
+  s_e01169cccf9f6c::t_7014849e3b215f 1-2,7
+  s_e01169cccf9f6c::t_e0db58b75ca780 4
+packages/database/package.json
+  ai_agent 27
+  s_e01169cccf9f6c::t_4d0592c977ba8d 4,10,28-29,32
+  s_e01169cccf9f6c::t_5e1a07607a837f 6
+  h_d2d80973a08152 1-3,5,7-9,11-18,20-24,26,30-31
+  s_e01169cccf9f6c::t_521d7adb6b1496 19
+  s_e01169cccf9f6c::t_3c4d5f0d57f876 25
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "aed74dc5354146c267539e5580394e401039611d",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
