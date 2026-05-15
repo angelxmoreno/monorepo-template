@@ -1,0 +1,26 @@
+packages/database/scripts/create-migration.sh
+  s_e01169cccf9f6c::t_b1a5990f3857c4 3-5
+packages/database/scripts/generate-migration.sh
+  s_e01169cccf9f6c::t_5c0d4ca78f6ac3 3-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "f17f8f434492d8c9c24d69ef375e9525fd946148",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
