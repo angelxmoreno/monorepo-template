@@ -1,0 +1,28 @@
+package.json
+  s_e01169cccf9f6c::t_7282f63443e509 21-30
+README.md
+  s_e01169cccf9f6c::t_d6be1fd72fcfe2 29-45
+  s_e01169cccf9f6c::t_3902e37b8d89bb 58
+  s_e01169cccf9f6c::t_6d81ce105a3680 71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "2af01f2968c59c084d026b07818e944db34e8ca5",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
