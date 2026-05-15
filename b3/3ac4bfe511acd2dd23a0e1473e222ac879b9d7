@@ -1,0 +1,35 @@
+packages/shared-types/package.json
+  s_e01169cccf9f6c::t_8eecd4bd983a4e 16
+  s_e01169cccf9f6c::t_90d3627c7e7fa0 9-11
+  h_d2d80973a08152 1,3,5-8,12-15,17,19
+  s_e01169cccf9f6c::t_04262acc15f677 2,4,18,20
+packages/shared-types/tsconfig.json
+  h_d2d80973a08152 1-5
+packages/shared-types/README.md
+  s_e01169cccf9f6c::t_dc31e175e706df 1-24
+bun.lock
+  ai_agent 17-47,124-135,140-141,164-167,172-185,188-193,198-203,216-229,234-239,242-243,248-253,260-261,264-265,268-275,280-283,286-287,290-305,308-309,314-317,322-331,334-335,368-375,378-395,400-403,406-427,432-439,442-459,462-463,466-471,474-477,480-485,490-495,498-501,508-513,515-560
+packages/shared-types/src/index.ts
+  ai_agent 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "b33ac4bfe511acd2dd23a0e1473e222ac879b9d7",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
