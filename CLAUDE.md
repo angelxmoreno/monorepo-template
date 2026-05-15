@@ -38,9 +38,10 @@ packages/
 ## Database Conventions
 
 - **EntitySchema** as single source of truth — no decorators, no class entities
-- **SnakeNamingStrategy** for DB (snake_case columns/tables), camelCase in code
+- **InflectionNamingStrategy** for DB (snake_case columns/tables), camelCase in code — do NOT set `tableName` in schemas
 - **Timestamps:** createdAt/updatedAt on every entity, auto-managed by TypeORM
-- **EntitySchema → Zod sync:** EntitySchema is source of truth, Zod schemas maintained manually (LLM-assisted)
+- **EntitySchema → Zod sync:** EntitySchemaOptions in `schemas/*.entity.ts`, Zod schemas in `shared-types/src/entities/*.schema.ts`, manually synced (LLM-assisted)
+- **File naming:** `{name}.entity.ts` for EntitySchemaOptions, `{name}.schema.ts` for Zod, `entities.ts` for all EntitySchema instances
 - **Service pattern:** Apps use service classes (shared-be), not repositories directly. Repositories are data access only.
 - **DataSource factory:** `createDataSourceOptions(url, overrides)` and `createDataSource(url, overrides)` — no env var coupling in the package
 - **Migrations:** TypeORM CLI (user has bun-compatible solution, TBA)
