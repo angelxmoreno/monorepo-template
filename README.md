@@ -13,7 +13,7 @@ apps/
   web/              # Vite + React — logged-in user UI
 
 packages/
-  database/         # TypeORM — database management and exports
+  database/         # TypeORM — entity schemas, DataSource factory, migrations
   shared-types/     # Zod schemas and shared types
   shared-be/        # Business logic service classes (BE shared)
 ```
@@ -35,6 +35,41 @@ bun install
 | `bun run lint:fix`  | Lint and fix with Biome        |
 | `bun run clean`     | Clean all build artifacts      |
 
+## Docker Services
+
+### Core services (`docker-compose.yml`)
+
+| Service  | Port(s)     | Description              |
+| -------- | ----------- | ------------------------ |
+| MariaDB  | 3306        | Primary database         |
+| Valkey   | 6379        | Redis-compatible cache   |
+| Minio    | 9000, 9001  | S3-compatible object store (console on 9001) |
+
+```bash
+docker compose up -d
+```
+
+### Hatchet (`docker-compose.hatchet.yml`)
+
+| Service          | Port(s)      | Description                |
+| ---------------- | ------------ | -------------------------- |
+| Hatchet Engine   | 7077, 7078   | Task queue (API + gRPC)    |
+| Postgres         | —            | Hatchet metadata database  |
+| RabbitMQ         | 15672        | Message broker (management) |
+| Redis            | —            | Hatchet queue state        |
+
+```bash
+docker compose -f docker-compose.hatchet.yml up -d
+```
+
+### Default credentials (development only)
+
+| Service  | User          | Password        |
+| -------- | ------------- | --------------- |
+| MariaDB  | musicalito    | musicalito      |
+| Minio    | musicalito    | musicalito123   |
+| Hatchet  | hatchet       | hatchet         |
+
 ## AI Code Review (Gito)
 
 This project uses [Gito](https://github.com/Nayjest/Gito) for AI-powered code reviews.
@@ -54,7 +89,7 @@ The workflow runs automatically on PRs. Requires these GitHub repo settings:
 
 **Variables** (Settings > Secrets and variables > Actions > Variables):
 - `LLM_API_BASE` — API endpoint (default: `https://api.ollama.com/v1/`)
-- `MODEL` — model to use (default: `llama3`)
+- `MODEL` — model to use (default: `deepseek-v4-pro:cloud`)
 
 ### Conventions
 

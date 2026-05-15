@@ -40,7 +40,7 @@ export function parseDsnString(dsn: string): Partial<DataSourceOptions> {
 	};
 
 	if (type === "mysql") {
-		const timezone = queryParams.get("timezone") ?? "UTC";
+		const timezone = queryParams.get("timezone") ?? "+00:00";
 		const charset = queryParams.get("charset") ?? "utf8mb4";
 		Object.assign(options, { timezone, charset });
 	}
