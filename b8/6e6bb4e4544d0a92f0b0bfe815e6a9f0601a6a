@@ -1,0 +1,29 @@
+packages/database/src/utils/parseDsnString.ts
+  s_e01169cccf9f6c::t_19b5fad642c557 3-4,6-31,34,37-52,57,61
+packages/database/src/naming-strategy/InflectionNamingStrategy.ts
+  s_e01169cccf9f6c::t_19b5fad642c557 9-21,29,53-56,58,60,65-69,78-82,89-93
+packages/database/src/naming-strategy/utils.ts
+  s_e01169cccf9f6c::t_19b5fad642c557 27-30,33-37,39-43,45,48-49,53-57
+  s_e01169cccf9f6c::t_f0dea4a2ec8e46 46-47
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "b86e6bb4e4544d0a92f0b0bfe815e6a9f0601a6a",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
