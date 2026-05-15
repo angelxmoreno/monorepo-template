@@ -1,0 +1,35 @@
+packages/typescript-config/README.md
+  s_e01169cccf9f6c::t_f16889dfbf61e8 18-55
+tsconfig.json
+  s_e01169cccf9f6c::t_70d33794e8d694 2
+packages/typescript-config/tsconfig.apps.json
+  s_e01169cccf9f6c::t_f6245acfdb4569 2-7
+  h_d2d80973a08152 1,8
+packages/typescript-config/tsconfig.packages.json
+  s_e01169cccf9f6c::t_f6245acfdb4569 2-7
+packages/typescript-config/tsconfig.json
+  s_e01169cccf9f6c::t_f6245acfdb4569 2-24
+packages/typescript-config/package.json
+  s_e01169cccf9f6c::t_f6245acfdb4569 2-21
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "6b0b2b6287d79a697f210e40dd3f29fb4f2a3df0",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": null
+    }
+  }
+}
