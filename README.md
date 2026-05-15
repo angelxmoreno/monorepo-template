@@ -26,14 +26,23 @@ bun install
 
 ## Scripts
 
-| Command             | Description                    |
-| ------------------- | ------------------------------ |
-| `bun run dev`       | Start all apps in dev mode     |
-| `bun run build`     | Build all packages and apps    |
-| `bun run check`     | Run type checks and code check |
-| `bun run lint`      | Lint with Biome                |
-| `bun run lint:fix`  | Lint and fix with Biome        |
-| `bun run clean`     | Clean all build artifacts      |
+| Command                  | Description                    |
+| ------------------------ | ------------------------------ |
+| `bun run dev`            | Start all apps in dev mode     |
+| `bun run build`          | Build all packages and apps    |
+| `bun run check`          | Run type checks and code check |
+| `bun run lint`           | Lint with Biome                |
+| `bun run lint:fix`       | Lint and fix with Biome        |
+| `bun run clean`          | Clean all build artifacts      |
+| `bun run docker:up`      | Start core services            |
+| `bun run docker:down`    | Stop core services             |
+| `bun run docker:up:hatchet` | Start Hatchet services      |
+| `bun run docker:down:hatchet` | Stop Hatchet services    |
+| `bun run db:migration:create` | Create empty migration   |
+| `bun run db:migration:generate` | Generate migration from diff |
+| `bun run db:migration:show` | Show migration status       |
+| `bun run db:migration:run`  | Run pending migrations       |
+| `bun run db:migration:revert` | Revert last migration     |
 
 ## Docker Services
 
@@ -46,7 +55,7 @@ bun install
 | Minio    | 9000, 9001  | S3-compatible object store (console on 9001) |
 
 ```bash
-docker compose up -d
+bun run docker:up
 ```
 
 ### Hatchet (`docker-compose.hatchet.yml`)
@@ -59,7 +68,7 @@ docker compose up -d
 | Redis            | —            | Hatchet queue state        |
 
 ```bash
-docker compose -f docker-compose.hatchet.yml up -d
+bun run docker:up:hatchet
 ```
 
 ### Default credentials (development only)
