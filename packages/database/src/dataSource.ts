@@ -7,6 +7,9 @@ dotenv.config({
 	quiet: true,
 	override: false, // ensures first-found variable wins
 });
-const databaseUrl = Bun.env.DATABASE_URL ?? "";
-const options = createDataSourceOptions(databaseUrl);
-export const AppDataSource = new DataSource(options);
+if (!Bun.env.DATABASE_URL) {
+	throw new Error("DATABASE_URL environment variable is not set.");
+}
+export const AppDataSource = new DataSource(
+	createDataSourceOptions(Bun.env.DATABASE_URL),
+);
