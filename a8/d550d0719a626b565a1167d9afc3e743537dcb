@@ -1,0 +1,26 @@
+packages/database/src/dataSource.ts
+  s_e01169cccf9f6c::t_c8519d5a4a64b0 10-12
+  ai_agent 15
+  s_e01169cccf9f6c::t_16d4d712d0115c 13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "a8d550d0719a626b565a1167d9afc3e743537dcb",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
