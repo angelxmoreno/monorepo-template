@@ -1,48 +1,64 @@
 import type { DataSourceOptions } from "typeorm";
 
-export function parseDsnString(dsn: string): Partial<DataSourceOptions> {
-	if (dsn.startsWith("sqlite://")) {
-		const match = dsn.match(/^sqlite:\/\/([^?]+)(?:\?(.*))?$/);
-		if (!match) {
-			throw new Error("Invalid SQLite DSN");
-		}
+const SUPPORTED_PROTOCOLS = ["mysql", "postgres"] as const;
+type SupportedType = (typeof SUPPORTED_PROTOCOLS)[number];
 
-		const [, path, queryString] = match;
-		const queryParams = new URLSearchParams(queryString || "");
+const BOOLEAN_PARAMS = ["synchronize", "logging", "migrationsRun"] as const;
 
-		return {
-			type: "sqlite",
-			database: path,
-			synchronize: queryParams.get("synchronize") === "true",
-			logging: queryParams.get("logging") === "true",
-			migrationsRun: queryParams.get("migrationsRun") === "true",
-		};
-	}
+function parseBooleanParams(
+	params: URLSearchParams,
+): Pick<DataSourceOptions, "synchronize" | "logging" | "migrationsRun"> {
+	return Object.fromEntries(
+		BOOLEAN_PARAMS.map((key) => [key, params.get(key) === "true"]),
+	) as Pick<DataSourceOptions, "synchronize" | "logging" | "migrationsRun">;
+}
 
-	const url = new URL(dsn);
-	const rawType = url.protocol.replace(":", "");
-	const normalizedType = rawType === "postgresql" ? "postgres" : rawType;
-	const supportedTypes = ["mysql", "postgres"] as const;
-	const type = supportedTypes.find((t) => t === normalizedType);
+function parseSqliteDsn(dsn: string): Partial<DataSourceOptions> {
+	const match = dsn.match(/^sqlite:\/\/([^?]+)(?:\?(.*))?$/);
+	if (!match) throw new Error("Invalid SQLite DSN");
+
+	const [, path, queryString] = match;
+	const params = new URLSearchParams(queryString ?? "");
+	return {
+		type: "sqlite",
+		database: path,
+		...parseBooleanParams(params),
+	};
+}
+
+function normalizeType(protocol: string): SupportedType {
+	const normalized = protocol === "postgresql" ? "postgres" : protocol;
+	const type = SUPPORTED_PROTOCOLS.find((t) => t === normalized);
 	if (!type) {
 		throw new Error(
-			`Unsupported DATABASE_URL protocol: ${url.protocol}. Supported: mysql:, postgres:, postgresql:, sqlite:`,
+			`Unsupported DATABASE_URL protocol: ${protocol}:. Supported: mysql:, postgres:, postgresql:, sqlite:`,
 		);
 	}
-	const queryParams = url.searchParams;
+	return type;
+}
+
+function parseMysqlParams(params: URLSearchParams): Partial<DataSourceOptions> {
+	return {
+		timezone: params.get("timezone") ?? "+00:00",
+		charset: params.get("charset") ?? "utf8mb4",
+	};
+}
+
+export function parseDsnString(dsn: string): Partial<DataSourceOptions> {
+	if (dsn.startsWith("sqlite://")) return parseSqliteDsn(dsn);
+
+	const url = new URL(dsn);
+	const type = normalizeType(url.protocol.replace(":", ""));
+	const params = url.searchParams;
 
 	const options: Partial<DataSourceOptions> = {
 		type,
 		url: dsn.replace(/\?.*$/, ""),
-		synchronize: queryParams.get("synchronize") === "true",
-		logging: queryParams.get("logging") === "true",
-		migrationsRun: queryParams.get("migrationsRun") === "true",
+		...parseBooleanParams(params),
 	};
 
 	if (type === "mysql") {
-		const timezone = queryParams.get("timezone") ?? "+00:00";
-		const charset = queryParams.get("charset") ?? "utf8mb4";
-		Object.assign(options, { timezone, charset });
+		Object.assign(options, parseMysqlParams(params));
 	}
 
 	return options;
