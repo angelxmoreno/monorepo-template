@@ -5,4 +5,8 @@ if [ -z "$1" ]; then
   echo "Example: bun run db:migration:generate AddUserEmail"
   exit 1
 fi
+if [[ ! "$1" =~ ^[A-Za-z_][A-Za-z0-9_]*$ ]]; then
+  echo "Error: migration name must be a valid identifier (letters, numbers, underscore; cannot start with a number)"
+  exit 1
+fi
 bun --bun typeorm migration:generate -d src/dataSource.ts -p --esm "src/migrations/$1"
