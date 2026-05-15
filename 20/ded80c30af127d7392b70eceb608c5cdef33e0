@@ -1,0 +1,33 @@
+docs/conventions/README.md
+  s_e01169cccf9f6c::t_158c4ab83e0845 1-7
+docs/conventions/database.md
+  s_e01169cccf9f6c::t_0dea8872b2d1eb 1-76
+.gitignore
+  h_d2d80973a08152 144
+CLAUDE.md
+  s_e01169cccf9f6c::t_a32b92e6346de7 59-64
+  s_e01169cccf9f6c::t_55f743bce90f14 1-58,65-84
+README.md
+  s_e01169cccf9f6c::t_7392ac14f43429 59-62
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "20ded80c30af127d7392b70eceb608c5cdef33e0",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
