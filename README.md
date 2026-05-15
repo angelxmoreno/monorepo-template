@@ -56,6 +56,10 @@ The workflow runs automatically on PRs. Requires these GitHub repo settings:
 - `LLM_API_BASE` — API endpoint (default: `https://api.ollama.com/v1/`)
 - `MODEL` — model to use (default: `llama3`)
 
+### Conventions
+
+See [docs/conventions/](./docs/conventions/README.md) for project-wide standards and architecture decisions.
+
 ### Project Config
 
 Review settings live in `.gito/config.toml`. Edit it to change exclusion rules, mention triggers, or review requirements.
