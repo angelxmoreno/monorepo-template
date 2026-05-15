@@ -18,11 +18,21 @@
 		"check:health": "fallow health",
 		"check:dead-code": "fallow dead-code",
 		"prepare": "lefthook install",
-		"clean": "turbo clean && rm -rf node_modules"
+		"clean": "turbo clean && rm -rf node_modules",
+		"docker:up": "docker compose up -d",
+		"docker:down": "docker compose down",
+		"docker:up:hatchet": "docker compose -f docker-compose.hatchet.yml up -d",
+		"docker:down:hatchet": "docker compose -f docker-compose.hatchet.yml down",
+		"db:migration:create": "bun --filter @repo/database migration:create",
+		"db:migration:generate": "bun --filter @repo/database migration:generate",
+		"db:migration:show": "bun --filter @repo/database migration:show",
+		"db:migration:run": "bun --filter @repo/database migration:run",
+		"db:migration:revert": "bun --filter @repo/database migration:revert"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.15",
 		"@commitlint/cli": "^21.0.0",
+		"@commitlint/types": "^21.0.0",
 		"@commitlint/config-conventional": "^21.0.0",
 		"@types/bun": "^1.3.13",
 		"fallow": "^2.70.0",

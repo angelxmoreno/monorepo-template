@@ -1,0 +1,5 @@
+{
+	"rules": {
+		"unused-class-members": "off"
+	}
+}
