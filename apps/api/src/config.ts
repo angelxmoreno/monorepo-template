@@ -10,6 +10,7 @@ const AppConfigSchema = z
 		TLS_CERT: z.string().optional(),
 		TLS_KEY: z.string().optional(),
 		CORS_ORIGINS: z.string().default("*"),
+		SECURE_HEADERS: envBooleanDefault(true),
 		LOGGER_PRETTY_PRINT: envBooleanDefault(true),
 	})
 	.transform(
@@ -17,6 +18,7 @@ const AppConfigSchema = z
 			TLS_CERT,
 			TLS_KEY,
 			CORS_ORIGINS,
+			SECURE_HEADERS,
 			HOSTNAME,
 			DATABASE_URL,
 			PORT,
@@ -35,6 +37,9 @@ const AppConfigSchema = z
 				},
 				cors: {
 					origins: (CORS_ORIGINS ?? "").split(","),
+				},
+				security: {
+					headers: SECURE_HEADERS,
 				},
 				database: {
 					url: DATABASE_URL,
