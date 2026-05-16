@@ -1,0 +1,37 @@
+apps/api/src/config.ts
+  s_e01169cccf9f6c::t_c87df402c28a40 13,21,41-43
+apps/api/src/middleware/notFound.ts
+  s_e01169cccf9f6c::t_59e09b03e3a9fc 6
+  h_d2d80973a08152 3
+  s_e01169cccf9f6c::t_a46be563fb6b96 1-2,5
+  s_e01169cccf9f6c::t_e8944477ac520b 4
+apps/api/src/server.ts
+  s_e01169cccf9f6c::t_3d8499704bad4e 5
+  s_e01169cccf9f6c::t_59e09b03e3a9fc 2,6
+  s_e01169cccf9f6c::t_4a56939996e26f 11
+  h_d2d80973a08152 12-13
+apps/api/src/middleware/secureHeaders.ts
+  s_e01169cccf9f6c::t_59e09b03e3a9fc 2,17-19
+  s_e01169cccf9f6c::t_dfd3734552dd06 1,6-16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "5b308d9816267e6e9a5617998a3c89da5bfd1d78",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
