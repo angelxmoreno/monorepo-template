@@ -1,0 +1,26 @@
+apps/api/src/index.ts
+  s_e01169cccf9f6c::t_5733f3bb515f02 22,25
+apps/api/src/config.ts
+  s_e01169cccf9f6c::t_0795742b937fd0 10-11,14-20,22-30,32-40,42
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "3dfc137dcdc414563b309525db6c735831b4c2e5",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_e01169cccf9f6c": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "108b62c8-5144-4de2-a067-48448e5900d0",
+        "model": "glm-5.1"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
