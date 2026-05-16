@@ -9,12 +9,14 @@ const AppConfigSchema = z
 		PORT: z.coerce.number().int().default(5001),
 		TLS_CERT: z.string().optional(),
 		TLS_KEY: z.string().optional(),
+		CORS_ORIGINS: z.string().default("*"),
 		LOGGER_PRETTY_PRINT: envBooleanDefault(true),
 	})
 	.transform(
 		({
 			TLS_CERT,
 			TLS_KEY,
+			CORS_ORIGINS,
 			HOSTNAME,
 			DATABASE_URL,
 			PORT,
@@ -30,6 +32,9 @@ const AppConfigSchema = z
 					port: PORT,
 					protocol: tls ? ("https" as const) : ("http" as const),
 					tls,
+				},
+				cors: {
+					origins: (CORS_ORIGINS ?? "").split(","),
 				},
 				database: {
 					url: DATABASE_URL,
