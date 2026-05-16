@@ -19,9 +19,10 @@ async function start() {
 		fetch: app.fetch,
 		hostname: appConfig.http.hostname,
 		port: appConfig.http.port,
+		...(appConfig.http.tls ?? {}),
 	});
 	logger.info(
-		`Server is at http://${appConfig.http.hostname}:${appConfig.http.port}`,
+		`Server is at ${appConfig.http.protocol}://${appConfig.http.hostname}:${appConfig.http.port}`,
 	);
 }
 
