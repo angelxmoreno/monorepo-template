@@ -36,7 +36,7 @@ const AppConfigSchema = z
 					tls,
 				},
 				cors: {
-					origins: (CORS_ORIGINS ?? "").split(","),
+					origins: CORS_ORIGINS.split(","),
 				},
 				security: {
 					headers: SECURE_HEADERS,

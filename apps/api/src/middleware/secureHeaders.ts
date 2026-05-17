@@ -14,6 +14,4 @@ export const createSecureHeadersMiddleware = (
 	enabled: boolean,
 	options?: SecureHeadersOptions,
 ): MiddlewareHandler =>
-	enabled
-		? secureHeaders(options ?? DEFAULT_OPTIONS)
-		: async (_c, next) => next();
+	enabled ? secureHeaders(options ?? DEFAULT_OPTIONS) : (_c, next) => next();
