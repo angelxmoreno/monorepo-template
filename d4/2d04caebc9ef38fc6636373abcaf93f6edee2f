@@ -1,0 +1,31 @@
+apps/api/src/index.ts
+  s_bbba940a573204::t_a5b4b926828ff9 21-28
+apps/api/src/config.ts
+  s_bbba940a573204::t_1581dd81df4c2b 47-49
+  s_bbba940a573204::t_cf52faa0e45c54 16-23
+apps/api/src/middleware/errorHandler.ts
+  s_bbba940a573204::t_fc5a85c715969b 23-28,31-32,34
+apps/api/src/utils/createLogger.ts
+  s_bbba940a573204::t_5087d4e58ec141 11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "d42d04caebc9ef38fc6636373abcaf93f6edee2f",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bbba940a573204": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "974e777d-5440-43cb-ba89-1bb589259e01",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
