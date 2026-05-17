@@ -1,0 +1,30 @@
+apps/api/src/middleware/errorHandler.ts
+  h_d2d80973a08152 15-16,18
+  s_bbba940a573204::t_433f98a8202535 4-14,19-37
+apps/api/src/server.ts
+  s_bbba940a573204::t_14dd04c29f5028 3,10-11,13-18,20-21
+  s_bbba940a573204::t_aa3b73f6fa2039 6
+apps/api/src/index.ts
+  s_bbba940a573204::t_25e8bc8cb92b5d 5,8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "9efc92451cd612c00f1eeda5ba82f6d5e3e227e5",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bbba940a573204": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "974e777d-5440-43cb-ba89-1bb589259e01",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
