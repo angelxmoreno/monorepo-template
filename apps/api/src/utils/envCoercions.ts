@@ -11,7 +11,7 @@ const BOOL_MAP: Record<string, boolean> = {
 };
 
 function coerceEnvBool(val: string | undefined, def: boolean): boolean {
-	if (val === undefined || val === null) return def;
+	if (val === undefined) return def;
 	const result = BOOL_MAP[val.toLowerCase()];
 	return result !== undefined ? result : def;
 }
