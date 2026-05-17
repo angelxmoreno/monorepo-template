@@ -2,9 +2,10 @@ import { connectDataSource, createDataSource } from "@repo/database";
 import { serve } from "bun";
 import { appConfig } from "@/config";
 import { createLogger } from "@/utils/createLogger";
-import app from "./server";
+import { createApp } from "./server";
 
 const logger = createLogger(appConfig.logger);
+const app = createApp(logger);
 
 async function start() {
 	const dataSource = createDataSource(appConfig.database.url);
