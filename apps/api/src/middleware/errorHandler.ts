@@ -25,7 +25,13 @@ export const createErrorHandler =
 			if (err.status >= 500) {
 				log.error(err, "Unhandled server error");
 			}
-			return c.json({ status: err.status, error: err.message }, err.status);
+			return c.json(
+				{
+					status: err.status,
+					error: err.status >= 500 ? "Internal server error" : err.message,
+				},
+				err.status,
+			);
 		}
 
 		const httpError = toHttpException(err);
