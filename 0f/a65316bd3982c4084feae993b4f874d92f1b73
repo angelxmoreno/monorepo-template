@@ -1,0 +1,26 @@
+apps/api/src/config.ts
+  h_d2d80973a08152 39
+apps/api/src/middleware/secureHeaders.ts
+  s_bbba940a573204::t_3a437bbcc4e204 17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "0fa65316bd3982c4084feae993b4f874d92f1b73",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bbba940a573204": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "974e777d-5440-43cb-ba89-1bb589259e01",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
