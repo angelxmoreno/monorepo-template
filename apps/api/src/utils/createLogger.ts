@@ -8,6 +8,6 @@ const CreateLoggerSchema = z.object({
 export const createLogger = (
 	params?: z.input<typeof CreateLoggerSchema>,
 ): Logger => {
-	const { pretty } = CreateLoggerSchema.parse(params);
+	const { pretty } = CreateLoggerSchema.parse(params ?? {});
 	return pretty ? pino({ transport: { target: "pino-pretty" } }) : pino();
 };

@@ -13,6 +13,14 @@ const AppConfigSchema = z
 		SECURE_HEADERS: envBooleanDefault(true),
 		LOGGER_PRETTY_PRINT: envBooleanDefault(true),
 	})
+	.superRefine(({ TLS_CERT, TLS_KEY }, ctx) => {
+		if (Boolean(TLS_CERT) !== Boolean(TLS_KEY)) {
+			ctx.addIssue({
+				code: "custom",
+				message: "TLS_CERT and TLS_KEY must both be set or both be unset",
+			});
+		}
+	})
 	.transform(
 		({
 			TLS_CERT,
@@ -36,7 +44,9 @@ const AppConfigSchema = z
 					tls,
 				},
 				cors: {
-					origins: CORS_ORIGINS.split(","),
+					origins: CORS_ORIGINS.split(",")
+						.map((s) => s.trim())
+						.filter(Boolean),
 				},
 				security: {
 					headers: SECURE_HEADERS,

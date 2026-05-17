@@ -20,18 +20,18 @@ const toHttpException = (err: Error): HTTPException =>
 export const createErrorHandler =
 	(log: Logger): ErrorHandler =>
 	(err, c) => {
-		const httpError = err instanceof HTTPException ? err : toHttpException(err);
-		const isServerError = httpError.status >= 500;
-
-		if (isServerError) {
-			log.error(err, "Unhandled server error");
+		if (err instanceof HTTPException) {
+			if (err.res) return err.getResponse();
+			if (err.status >= 500) {
+				log.error(err, "Unhandled server error");
+			}
+			return c.json({ status: err.status, error: err.message }, err.status);
 		}
 
+		const httpError = toHttpException(err);
+		log.error(err, "Unhandled server error");
 		return c.json(
-			{
-				status: httpError.status,
-				error: isServerError ? "Internal server error" : err.message,
-			},
+			{ status: httpError.status, error: "Internal server error" },
 			httpError.status,
 		);
 	};

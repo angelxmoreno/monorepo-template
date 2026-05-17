@@ -18,8 +18,14 @@ async function start() {
 		process.exit(1);
 	}
 
-	process.on("SIGINT", () => shutdown(dataSource));
-	process.on("SIGTERM", () => shutdown(dataSource));
+	const handleSignal = () => {
+		shutdown(dataSource).catch((err) => {
+			logger.error(err, "Shutdown failed");
+			process.exit(1);
+		});
+	};
+	process.on("SIGINT", handleSignal);
+	process.on("SIGTERM", handleSignal);
 
 	serve({
 		fetch: app.fetch,
