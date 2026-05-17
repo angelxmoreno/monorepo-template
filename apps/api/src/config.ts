@@ -1,0 +1,65 @@
+import { z } from "zod";
+import { createConfig } from "@/utils/createConfig";
+import { envBooleanDefault } from "@/utils/envCoercions";
+
+const AppConfigSchema = z
+	.object({
+		DATABASE_URL: z.url(),
+		HOSTNAME: z.string().default("127.0.0.1"),
+		PORT: z.coerce.number().int().default(5001),
+		TLS_CERT: z.string().optional(),
+		TLS_KEY: z.string().optional(),
+		CORS_ORIGINS: z.string().default("*"),
+		SECURE_HEADERS: envBooleanDefault(true),
+		LOGGER_PRETTY_PRINT: envBooleanDefault(true),
+	})
+	.superRefine(({ TLS_CERT, TLS_KEY }, ctx) => {
+		if (Boolean(TLS_CERT) !== Boolean(TLS_KEY)) {
+			ctx.addIssue({
+				code: "custom",
+				message: "TLS_CERT and TLS_KEY must both be set or both be unset",
+			});
+		}
+	})
+	.transform(
+		({
+			TLS_CERT,
+			TLS_KEY,
+			CORS_ORIGINS,
+			SECURE_HEADERS,
+			HOSTNAME,
+			DATABASE_URL,
+			PORT,
+			LOGGER_PRETTY_PRINT,
+		}) => {
+			const tls =
+				TLS_CERT && TLS_KEY
+					? { certFile: TLS_CERT, keyFile: TLS_KEY }
+					: undefined;
+			return {
+				http: {
+					hostname: HOSTNAME,
+					port: PORT,
+					protocol: tls ? ("https" as const) : ("http" as const),
+					tls,
+				},
+				cors: {
+					origins: CORS_ORIGINS.split(",")
+						.map((s) => s.trim())
+						.filter(Boolean),
+				},
+				security: {
+					headers: SECURE_HEADERS,
+				},
+				database: {
+					url: DATABASE_URL,
+				},
+				logger: {
+					pretty: LOGGER_PRETTY_PRINT,
+				},
+			};
+		},
+	);
+
+export type AppConfig = z.infer<typeof AppConfigSchema>;
+export const appConfig: AppConfig = createConfig(AppConfigSchema, Bun.env);
