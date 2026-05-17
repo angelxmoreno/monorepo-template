@@ -1,0 +1,31 @@
+packages/database/src/utils/connectDataSource.ts
+  s_bbba940a573204::t_b3161b401e75a0 1-12
+packages/database/src/index.ts
+  s_bbba940a573204::t_89fb194056861a 3
+apps/api/src/index.ts
+  s_bbba940a573204::t_b64812fe50eefe 34
+  s_bbba940a573204::t_572c4ec56cb635 1,12-18
+apps/api/src/utils/envCoercions.ts
+  s_bbba940a573204::t_1685dd1c492698 14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.8",
+  "base_commit_sha": "62d5731a07264b3156a85977b73e2557f4bc5928",
+  "prompts": {},
+  "humans": {
+    "h_d2d80973a08152": {
+      "author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  },
+  "sessions": {
+    "s_bbba940a573204": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "974e777d-5440-43cb-ba89-1bb589259e01",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "Angel S. Moreno <angelxmoreno@gmail.com>"
+    }
+  }
+}
